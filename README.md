@@ -5,8 +5,8 @@ Recomenda-se o uso do programa CodeBlocks para a abertura deles pois alguns poss
 
 ----------
 
-**Aula 01** - Recursividade
-**Aula 02** - Ponteiro de ponteiro e matrizes
-**Aula 03** - Criação de bibliotecas
-**Aula 04** - Bitwise
-**Aula 05** - Manipulação de arquivos
+**Aula 01** - Recursividade\
+**Aula 02** - Ponteiro de ponteiro e matrizes\
+**Aula 03** - Criação de bibliotecas\
+**Aula 04** - Bitwise\
+**Aula 05** - Manipulação de arquivos\
