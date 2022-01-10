@@ -2,12 +2,12 @@
 
 ## Contagem de caracteres
 
-`contagemDeCaracteres`
+`contagemDeCaracteres`  
 Seleciona um arquivo do tipo texto para contagem de um caractere em especifico.
 
 ## Contagem de linhas
 
-`contagemDeLinhas`
+`contagemDeLinhas`  
 Seleciona um arquivo do tipo texto para contagem de linhas que o arquivo possui.
 
 ## Copiador de campos de arquivo
@@ -16,5 +16,5 @@ Copia campos específicos de um arquivo do tipo texto para outro arquivo diferen
 
 ## Copiador de conteúdos de um arquivo
 
-`copiadorDeConteudo`
+`copiadorDeConteudo`  
 Copia o conteúdo inteiro de um arquivo tipo texto para outro arquivo diferente.
