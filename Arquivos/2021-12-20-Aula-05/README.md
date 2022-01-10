@@ -1,17 +1,17 @@
 # Algoritmos desenvolvidos
 
-#### Contagem de caracteres
+## Contagem de caracteres
 
 Seleciona um arquivo do tipo texto para contagem de um caractere em especifico.
 
-#### Contagem de linhas
+## Contagem de linhas
 
 Seleciona um arquivo do tipo texto para contagem de linhas que o arquivo possui.
 
-#### Copiador de campos de arquivo
+## Copiador de campos de arquivo
 
 Copia campos específicos de um arquivo do tipo texto para outro arquivo diferente.
 
-#### Copiador de conteúdos de um arquivo
+## Copiador de conteúdos de um arquivo
 
 Copia o conteúdo inteiro de um arquivo tipo texto para outro arquivo diferente.
