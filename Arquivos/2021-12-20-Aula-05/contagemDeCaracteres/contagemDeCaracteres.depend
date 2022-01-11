@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1641846824 source:d:\sistema\desktop\unesp\github\atp-2\arquivos\2021-12-20-aula-05\contadordecaracteres\contagemdecaracteres\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-
