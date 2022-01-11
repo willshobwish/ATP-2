@@ -1,3 +1,4 @@
+# Ignora os arquivos/pastas gerados pelo CodeBlocks
 *.exe
 *.depend
 *.layout
