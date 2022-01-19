@@ -33,6 +33,17 @@ void printBits(Byte N){
     pula_linha;
 }
 
+void StrByte(Byte *N, char  *s){
+    Byte b;
+    *N = 0;
+    for(int i = 7;i>=0;i--){
+        if(s[i] == '1'){
+            b = pow(2,i);
+            *N = *N | b;
+        }
+    }
+}
+
 void ByteStr(Byte N, char *s){
     int i;
     for(i=7;i>=0;i--){
@@ -56,6 +67,8 @@ int main()
     printf("A: %3i: ",A);
     ByteStr(A,s8);
     printf("%s\n",s8);
+    StrByte(&A,s8);
+    printf("A:%3i S8:%s\n",A,s8);
     pula_linha;
 
     C = A & B;
