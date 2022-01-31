@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-//No arquivo original nao ha esta biblioteca, ele inclui variaveis booleanos
+//No arquivo original nao ha stdbool biblioteca, ele inclui variaveis booleanos
 
 #define TAMANHONOME 100
 // 99 caracteres + '\0'
