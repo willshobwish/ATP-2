@@ -1,6 +1,10 @@
-# Ignora os arquivos/pastas gerados pelo CodeBlocks
+# Ignora os arquivos CodeBlocks
 *.exe
 *.depend
 *.layout
+*.editorconfig
+*.exe
+
+#Ignora pastas criados pelo CodeBlocks
 **/bin
 **/obj
