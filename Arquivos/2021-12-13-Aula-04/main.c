@@ -57,7 +57,7 @@ void ByteStr(Byte N, char *s){
     s[8] = '\0';
 }
 
-int main()
+int main(void)
 {
     Byte A,B,C;
     StringByte s8;
