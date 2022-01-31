@@ -1,3 +1,4 @@
+//Codigo desenvolvido
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -88,6 +89,7 @@ int main(void)
     }
 
     //Caso ocorra um ou mais erros durante o fechamento, ele mostrara essa mensagem
+    //Possui uma variavel booleana
     if(erro){
         printf("Houve erros durante o fechamento dos arquivos");
     }
