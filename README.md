@@ -5,9 +5,11 @@ Recomenda-se o uso do programa CodeBlocks para a abertura deles pois alguns poss
 
 ----------
 
-**Aula 01** - Recursividade\
-**Aula 02** - Ponteiro de ponteiro e matrizes\
-**Aula 03** - Criação de bibliotecas\
-**Aula 04** - Bitwise\
-**Aula 05** - Manipulação de arquivos do tipo texto em C\
-**Aula 06** - Manipulação de arquivos baixo nível\
+**Aula 01** - Recursividade  
+**Aula 02** - Ponteiro de ponteiro e matrizes  
+**Aula 03** - Criação de bibliotecas  
+**Aula 04** - Bitwise  
+**Aula 05** - Manipulação de arquivos do tipo texto em C  
+**Aula 06** - Manipulação de arquivos baixo nível  
+**Aula 07** - Busca linear, selection sort e insertion sort  
+**Aula 08** - Busca de objetos: Bubble sort, shell sort e merge sort  
