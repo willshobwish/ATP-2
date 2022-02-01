@@ -8,3 +8,4 @@
 #Ignora pastas criados pelo CodeBlocks
 **/bin
 **/obj
+**/exercicios
