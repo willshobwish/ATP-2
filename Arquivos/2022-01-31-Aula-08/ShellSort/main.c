@@ -1,3 +1,4 @@
+// Este algoritmo nao esta funcionando corretamente
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
