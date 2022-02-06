@@ -11,5 +11,5 @@ Recomenda-se o uso do programa CodeBlocks para a abertura deles pois alguns poss
 **Aula 04** - Bitwise  
 **Aula 05** - Manipulação de arquivos do tipo texto em C  
 **Aula 06** - Manipulação de arquivos baixo nível  
-**Aula 07** - Busca linear, selection sort e insertion sort  
-**Aula 08** - Busca de objetos: Bubble sort, shell sort e merge sort  
+**Aula 07** - Busca linear, ordenação de elementos: selection sort e insertion sort  
+**Aula 08** - Ordenação de elementos: bubble sort, shell sort e merge sort  
