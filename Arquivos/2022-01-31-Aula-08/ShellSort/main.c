@@ -22,10 +22,10 @@ int LeituraDimensaoVetor() {  // funcao que define o tamatnho do vetor a partir 
 }
 
 void AssociarValoresVetor(int *ponteiro, int dimensao) {  // funcao que gera valores pseudoaleatorios para preencher o vetor com elementos numericos
-    time_t tempo;
-    srand((unsigned)time(&tempo));        // void srand(unsigned int seed), precisa de uma "semente" para gerar numeros pseudoaleatorios
-    for (int i = 0; i < dimensao; i++) {  // for para percorrer o vetor e atribuir valores aos elementos do vetor
-        *(ponteiro + i) = rand();         // atribuicao em cada elemento
+    time_t tempo;                                         // typedef /* unspecified */ time_t;
+    srand((unsigned)time(&tempo));                        // void srand(unsigned int seed), precisa de uma "semente" para gerar numeros pseudoaleatorios
+    for (int i = 0; i < dimensao; i++) {                  // for para percorrer o vetor e atribuir valores aos elementos do vetor
+        *(ponteiro + i) = rand();                         // atribuicao em cada elemento
     }
     return;
 }

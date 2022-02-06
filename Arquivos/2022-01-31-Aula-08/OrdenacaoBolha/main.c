@@ -21,10 +21,10 @@ int LeituraDimensaoVetor() {  // funcao que define o tamatnho do vetor a partir 
 }
 
 void AssociarValoresVetor(int *ponteiro, int dimensao) {  // funcao que gera valores pseudoaleatorios para preencher o vetor com elementos numericos
-    time_t tempo;
-    srand((unsigned)time(&tempo));        // void srand(unsigned int seed), precisa de uma "semente" para gerar numeros pseudoaleatorios
-    for (int i = 0; i < dimensao; i++) {  // for para percorrer o vetor e atribuir valores aos elementos do vetor
-        *(ponteiro + i) = rand();         // atribuicao em cada elemento
+    time_t tempo;                                         // typedef /* unspecified */ time_t;
+    srand((unsigned)time(&tempo));                        // void srand(unsigned int seed), precisa de uma "semente" para gerar numeros pseudoaleatorios
+    for (int i = 0; i < dimensao; i++) {                  // for para percorrer o vetor e atribuir valores aos elementos do vetor
+        *(ponteiro + i) = rand();                         // atribuicao em cada elemento
     }
     return;
 }
@@ -68,7 +68,7 @@ int main() {
     int tamanhoVetor, vetor[TAMANHOMAXIMO];
     tamanhoVetor = LeituraDimensaoVetor();
     AssociarValoresVetor(vetor, tamanhoVetor);
-    puts("Vetor original:");
+    puts("Vetor original:");  //"puts()" eh semelhante a "printf()" porem coloca "\n" ao final automaticamente
     ImprimirValoresVetor(vetor, tamanhoVetor);
     OrdenacaoBolha(vetor, tamanhoVetor);
     puts("\nVetor Ordenado:");
