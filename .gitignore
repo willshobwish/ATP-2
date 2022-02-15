@@ -4,6 +4,7 @@
 *.layout
 *.editorconfig
 *.exe
+*.vscode
 
 #Ignora pastas criados pelo CodeBlocks
 **/bin
