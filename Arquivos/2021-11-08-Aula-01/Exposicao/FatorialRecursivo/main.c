@@ -4,7 +4,7 @@
 int fatorial_nRecursivo(int n){
     int i;
     int fat_nRecursivo = 1;
-    for(i=n;i>1;i--){//for descrecente
+    for(i=n;i>1;i--){
         fat_nRecursivo = fat_nRecursivo * i;
     }
     return fat_nRecursivo;
@@ -16,14 +16,22 @@ int fatorial_recursivo(int n){
         fat_recursivo = 1;
     }
     else{
-        fat_recursivo = n * fatorial_recursivo(n-1);//chamada recursiva
+        fat_recursivo = n * fatorial_recursivo(n-1);
     }
     return fat_recursivo;
 }
 
+int fatorialRecursivoPonteiro(int *n){
+int fat_recursivo;
+if(n==0){
+    fat_recursivo=1;
+}else{
+fat_recursivo = *n * fatorialRecursivoPonteiro(*n-1);
+}
+}
 int main(){
     int n,i;
-    int fr,fnr;
+    int fr,fnr,frp=2;
 
     printf("Digite um numero para o calculo do fatorial: ");
     scanf("%i",&n);
@@ -35,8 +43,10 @@ int main(){
     else{
         fr = fatorial_recursivo(n);
         fnr = fatorial_nRecursivo(n);
+        fatorialRecursivoPonteiro(&frp);
         printf("Nao recursivo fat(%i) = %i\n",n,fnr);
         printf("Recursivo fat(%i) = %i\n",n,fr);
+        printf("%i",frp);
     }
 
     getchar();
