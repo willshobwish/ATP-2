@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "funcoes-fat.c"
+
+#include "funcoes-fat.h"
 
 int main() {
     int n, r;

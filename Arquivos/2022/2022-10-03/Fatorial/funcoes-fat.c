@@ -8,6 +8,7 @@ void fatorialRecRef(int n, int *res) {
         fatorialRecRef(n - 1, &aux);
         aux = n * aux;
     }
+    // Retorna por passagem de parametro o resultado do fatorial
     *res = aux;
 }
 
