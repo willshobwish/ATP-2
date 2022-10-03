@@ -10,3 +10,19 @@ void fatorialRecRef(int n, int *res) {
     }
     *res = aux;
 }
+
+int fatorialRecVal(int n) {
+    int r = 1;
+    if (n > 0) {
+        r = n * fatorialRecVal(n - 1);
+    }
+    return r;
+}
+
+int fatorialNRecVal(int n) {
+    int i, r = 1;
+    for (i = 1; i <= n; i++) {
+        r = r * i;
+    }
+    return r;
+}
