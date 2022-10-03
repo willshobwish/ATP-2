@@ -33,7 +33,10 @@
 		</Compiler>
 		<Unit filename="funcoes-fat.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="funcoes-fat.h">
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
