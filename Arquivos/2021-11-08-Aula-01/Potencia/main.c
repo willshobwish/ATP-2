@@ -3,7 +3,7 @@
 
 int PotenciaRecursivo(int base, int elevado) {
     if (elevado != 0) {
-        return (base * pow(base, elevado - 1));
+        return (base * PotenciaRecursivo(base, elevado - 1));
     } else {
         return 1;
     }
