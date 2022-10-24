@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "matrizmultarq.h"
+#include "multiMatriz.h"
 
 int main() {
     float **A;  // matriz A: ponteiro de ponteiro
