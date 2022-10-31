@@ -1,52 +1,53 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int fatorial_nRecursivo(int n){
+int FatorialNRecursivo(int n) {
     int i;
-    int fat_nRecursivo = 1;
-    for(i=n;i>1;i--){
-        fat_nRecursivo = fat_nRecursivo * i;
+    int FatNRecursivo = 1;
+    for (i = n; i > 1; i--) {
+        FatNRecursivo = FatNRecursivo * i;
     }
-    return fat_nRecursivo;
+    return FatNRecursivo;
 }
 
-int fatorial_recursivo(int n){
-    int fat_recursivo;
-    if(n==0){
-        fat_recursivo = 1;
+int FatorialRecursivo(int n) {
+    int FatRecursivo;
+    if (n == 0) {
+        FatRecursivo = 1;
+    } else {
+        FatRecursivo = n * FatorialRecursivo(n - 1);
     }
-    else{
-        fat_recursivo = n * fatorial_recursivo(n-1);
-    }
-    return fat_recursivo;
+    return FatRecursivo;
 }
 
-int fatorialRecursivoPonteiro(int *n){
-int fat_recursivo;
-if(n==0){
-    fat_recursivo=1;
-}else{
-fat_recursivo = *n * fatorialRecursivoPonteiro(*n-1);
+int FatorialRecursivoPonteiro(int *n) {
+    int i;
+    int FatNRecursivo = 1;
+    for (i = *n; i > 1; i--) {
+        FatNRecursivo = FatNRecursivo * i;
+    }
+    *n = FatNRecursivo;
 }
-}
-int main(){
-    int n,i;
-    int fr,fnr,frp=2;
+
+int main() {
+    int n, i;
+    int fr, fnr, frp;
 
     printf("Digite um numero para o calculo do fatorial: ");
-    scanf("%i",&n);
+    scanf("%i", &n);
 
-    if(n<0){
+    if (n < 0) {
         printf("O numero deve ser inteiro nao negativo\n");
     }
 
-    else{
-        fr = fatorial_recursivo(n);
-        fnr = fatorial_nRecursivo(n);
-        fatorialRecursivoPonteiro(&frp);
-        printf("Nao recursivo fat(%i) = %i\n",n,fnr);
-        printf("Recursivo fat(%i) = %i\n",n,fr);
-        printf("%i",frp);
+    else {
+        frp = n;
+        fr = FatorialRecursivo(n);
+        fnr = FatorialNRecursivo(n);
+        FatorialRecursivoPonteiro(&frp);
+        printf("Nao recursivo fat(%i) = %i\n", n, fnr);
+        printf("Recursivo fat(%i) = %i\n", n, fr);
+        printf("Nao recursivo por ponteiro: %i\n", frp);
     }
 
     getchar();
