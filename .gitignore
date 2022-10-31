@@ -5,9 +5,10 @@
 *.editorconfig
 *.exe
 *.vscode
+*.o 
 
 #Ignora pastas criados pelo CodeBlocks
-**/bin
-**/obj
+# **/bin
+# **/obj
 **/exercicios
 **/local
