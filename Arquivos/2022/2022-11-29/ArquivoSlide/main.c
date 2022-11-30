@@ -25,8 +25,11 @@ int main(void) {
         }
     } while (continua);
     printf("Insira um valor para a semente: ");
+    // Define o primeiro valor do vetor para a semente
     scanf("%d", &vetor[0]);
     for (i = 1; i < tamanhoDaSequencia; i++) {
+        // Como esta comecando por 1, a semente ainda esta no indice 0
+        // Pegamos o valor anterior
         vetor[i] = (vetor[i - 1] * a + b) % c;
     }
     filePointer = fopen(nomeArquivoTexto, "w");
