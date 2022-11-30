@@ -16,49 +16,11 @@
 FILE *File;
 
 int main() {
-    // char nomeArquivo[] = "Resultado";
-    // int x0, xi, a, b, c, resultado, *array, *dado;
-    // // O array pode ser criado estaticamente
-    // array = (int *)calloc(MAX, sizeof(float));
-    // printf("Coloque os numeros de x0,a,b e c:\n");
-    // scanf("%d %d %d %d", &x0, &a, &b, &c);
-    // printf("\nx0:%d\na:%d\nb:%d\nc:%d\n", x0, a, b, c);
-    // if ((File = fopen("Resultado.dat", "wb")) == NULL) {
-    //     printf("Erro na abertura do arquivo 'Resultado.txt'\n");
-    //     exit(1);
-    // } else {
-    //     printf("Arquivo aberto com sucesso\n");
-    // }
-    // for (int xi = 1; xi <= MAX; xi++) {
-    //     if (xi != 1) {
-    //         resultado = (a * x0 + b) % c;
-    //     } else {
-    //         resultado = x0;
-    //     }
-    //     printf("Numero gerado na posicao %d: %d\n", xi, resultado);
-    //     fwrite(resultado, sizeof(int), 1, File);
-    //     // fprintf(File, "%d\n", resultado);
-    //     array[xi] = resultado;
-    //     x0 = resultado;
-    //     printf("Array[%d]: %d\n", xi, array[xi]);
-    // }
-    // if (fclose(File) != 0) {
-    //     printf("Erro no fechamento do arquivo\n");
-    // } else {
-    //     printf("Arquivo fechado com sucesso\n");
-    // }
-    // if ((File = fopen("Resultado", "rb")) == NULL) {
-    //     printf("Erro na abertura do arquivo\n");
-    // } else {
-    //     while (!feof(File)) {
-    //         fread(dado, sizeof(int), 1, File);
-    //         printf("Dado: %d\n", dado);
-    //     }
-    // }
-    int a = 1, b = 2, c = 3, index = 0, tamanhoDaSequencia = 20, *vetor;
+    int a = 1, b = 2, c = 3, index = 0, tamanhoDaSequencia = 20, *vetor, dado;
     printf("Insira o tamanho da sequencia: ");
     scanf("%d", &tamanhoDaSequencia);
     fflush(stdin);
+
     vetor = calloc(tamanhoDaSequencia, sizeof(int));
 
     printf("Insira os valores de a, b, c: ");
@@ -72,5 +34,16 @@ int main() {
     for (index = 1; index < tamanhoDaSequencia; index++) {
         vetor[index] = (vetor[index - 1] * a + b) % c;
         printf("%d\n", vetor[index]);
+    }
+    File = fopen("Resultado", "wb");
+    fwrite(vetor, sizeof(int), tamanhoDaSequencia, File);
+    fclose(File);
+
+    File = fopen("Resultado", "rb");
+    index = 0;
+    while (!feof(File)) {
+        fread(&dado, sizeof(int), 1, File);
+        printf("Arquivo binario [%d]: %d\n", index, dado);
+        index++;
     }
 }
