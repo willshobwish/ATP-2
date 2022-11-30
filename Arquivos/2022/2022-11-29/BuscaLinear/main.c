@@ -12,7 +12,8 @@
 #include <stdlib.h>
 
 #define MAX 100
-
+typedef enum Logico { verdadeiro = 1,
+                      falso = 0 } logico;
 FILE *File;
 
 int main() {
@@ -26,6 +27,7 @@ int main() {
     vetor = calloc(tamanhoDaSequencia, sizeof(int));
 
     printf("Insira os valores de a, b, c: ");
+    // 2, 3 e 100 sao bons valores de a, b e c
     scanf("%d %d %d", &a, &b, &c);
     fflush(stdin);
 
@@ -51,5 +53,34 @@ int main() {
         fread(&dado, sizeof(int), 1, File);
         printf("Arquivo binario [%d]: %d\n", index, dado);
         index++;
+    }
+    busca(vetor, tamanhoDaSequencia);
+}
+
+void busca(int *x, int n) {
+    int dado, i;
+    logico encontrou;
+    printf("Digite um valor para realizar a busca no vetor: ");
+    scanf("%d", &dado);
+    while (dado != 0) {
+        encontrou = falso;
+        i = 0;
+        while (i < n && !encontrou) {
+            // while (i < n) {
+            if (x[i] == dado) {
+                encontrou = verdadeiro;
+
+            } else {
+                i++;
+            }
+        }
+        if (encontrou) {
+            printf("Valor %d encontrado na posicao %d\n", dado, i);
+
+        } else {
+            printf("Valor %d nao encontrado\n", dado);
+        }
+        printf("Digite um outro valor para encontrar no vetor (digite 0 para encerrar): ");
+        scanf("%d", &dado);
     }
 }
