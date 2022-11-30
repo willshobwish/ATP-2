@@ -19,8 +19,10 @@ int main() {
     int a = 1, b = 2, c = 3, index = 0, tamanhoDaSequencia = 20, *vetor, dado;
     printf("Insira o tamanho da sequencia: ");
     scanf("%d", &tamanhoDaSequencia);
+    // Acredito que nao seja necessario o fflush, porem coloquei por via das duvidas
     fflush(stdin);
 
+    // Precisa alocar o vetor na memoria antes de utilizar ou alocar em algum indice do vetor
     vetor = calloc(tamanhoDaSequencia, sizeof(int));
 
     printf("Insira os valores de a, b, c: ");
@@ -35,13 +37,17 @@ int main() {
         vetor[index] = (vetor[index - 1] * a + b) % c;
         printf("%d\n", vetor[index]);
     }
+    // Abrimos o arquivo de formato binario para escrever o conteudo
     File = fopen("Resultado", "wb");
+    // fwrite(endereco do conteudo a ser gravado, tamanho do tipo de dado do conteudo, a quantidade de conteudo, ponteiro do arquivo)
     fwrite(vetor, sizeof(int), tamanhoDaSequencia, File);
     fclose(File);
-
+    // Abrimos o arquivo de formato binario em modo de leitura
     File = fopen("Resultado", "rb");
     index = 0;
+    // Enquanto nao chegou no final do arquivo, continuara sendo lido o conteudo
     while (!feof(File)) {
+        // fread (endereco de destino do dado lido, tamanho do tipo de dado lido, quantidade de dados, ponteiro de arquivo)
         fread(&dado, sizeof(int), 1, File);
         printf("Arquivo binario [%d]: %d\n", index, dado);
         index++;
