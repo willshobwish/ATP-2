@@ -67,16 +67,18 @@ int main() {
         // fscanf(file, "%s\n", alunos[index].dataNascimento.mes);
         // fscanf(file, "%s\n", &mesNome);
         // alunos[index].dataNascimento.mes = mesNome;
-        fscanf(file, "%d\n", alunos[index].dataNascimento.mes);
+        char MesString[100];
+        fscanf(file, "%s\n", &(alunos[index].dataNascimento.mes));
+        // strcpy((char)alunos[index].dataNascimento.mes, MesString);
         fscanf(file, "%d\n", &(alunos[index].dataNascimento.ano));
-        printf("Data de nascimento: %d de %s de %d\n", alunos[index].dataNascimento.dia, alunos[index].dataNascimento.mes, alunos[index].dataNascimento.ano);
+        printf("Data de nascimento: %d de %d de %d\n", alunos[index].dataNascimento.dia, alunos[index].dataNascimento.mes, alunos[index].dataNascimento.ano);
         for (int i = 0; i < 6; i++) {
             fscanf(file, "%f\n", &alunos[index].notas.notaTrabalho[i]);
-            printf("Nota do trabalho[%d]:%.2f\n", i, alunos[index].notas.notaTrabalho[i]);
+            printf("Nota do trabalho[%d]: %.2f\n", i, alunos[index].notas.notaTrabalho[i]);
         }
         for (int i = 0; i < 5; i++) {
             fscanf(file, "%f\n", &alunos[index].notas.notaProva[i]);
-            printf("Nota da prova[%d]:%.2f\n", i, alunos[index].notas.notaProva[i]);
+            printf("Nota da prova[%d]: %.2f\n", i, alunos[index].notas.notaProva[i]);
         }
         index++;
     }
