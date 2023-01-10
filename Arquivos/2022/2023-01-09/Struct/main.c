@@ -59,26 +59,30 @@ int main() {
     file = fopen("teste.txt", "r");
     float numeroLido;
     int index = 0;
+    MES mesNome;
     while (!feof(file)) {
-        fscanf(file, "%s\n", &aluno01.nome);
-        printf("Nome do aluno: %s\n", aluno01.nome);
-        fscanf(file, "%d\n", &aluno01.dataNascimento.dia);
-        fscanf(file, "%s\n", &aluno01.dataNascimento.mes);
-        fscanf(file, "%d\n", &aluno01.dataNascimento.ano);
-        printf("Data de nascimento: %d de %d de %d\n", aluno01.dataNascimento.dia, aluno01.dataNascimento.mes, aluno01.dataNascimento.ano);
+        fscanf(file, "%s\n", alunos[index].nome);
+        printf("Nome do aluno: %s\n", alunos[index].nome);
+        fscanf(file, "%d\n", &(alunos[index].dataNascimento.dia));
+        // fscanf(file, "%s\n", alunos[index].dataNascimento.mes);
+        // fscanf(file, "%s\n", &mesNome);
+        // alunos[index].dataNascimento.mes = mesNome;
+        fscanf(file, "%d\n", alunos[index].dataNascimento.mes);
+        fscanf(file, "%d\n", &(alunos[index].dataNascimento.ano));
+        printf("Data de nascimento: %d de %s de %d\n", alunos[index].dataNascimento.dia, alunos[index].dataNascimento.mes, alunos[index].dataNascimento.ano);
         for (int i = 0; i < 6; i++) {
-            fscanf(file, "%f\n", &aluno01.notas.notaTrabalho[i]);
-            printf("Nota do trabalho[%d]:%.2f\n", i, aluno01.notas.notaTrabalho[i]);
+            fscanf(file, "%f\n", &alunos[index].notas.notaTrabalho[i]);
+            printf("Nota do trabalho[%d]:%.2f\n", i, alunos[index].notas.notaTrabalho[i]);
         }
         for (int i = 0; i < 5; i++) {
-            fscanf(file, "%f\n", &aluno01.notas.notaProva[i]);
-            printf("Nota da prova[%d]:%.2f\n", i, aluno01.notas.notaProva[i]);
+            fscanf(file, "%f\n", &alunos[index].notas.notaProva[i]);
+            printf("Nota da prova[%d]:%.2f\n", i, alunos[index].notas.notaProva[i]);
         }
         index++;
     }
     fclose(file);
-    ponteiro = &aluno01;
-    float media = calculaMedia(ponteiro, 6, 5);
+    ponteiro = &alunos[0];
+    float media = calculaMedia(&alunos[0], 6, 5);
     printf("Media: %.2f", media);
     return 0;
 }
