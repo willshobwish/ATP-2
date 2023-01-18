@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 #define MAX 11
-#define LIN 2
-#define COL 10
+#define LINHA 2
+#define COLUNA 10
 
 int fatorial(int n) {
     int i, r = 1;
@@ -55,64 +55,64 @@ int main() {
     printNewLine();
 
     int **matriz;
-    matriz = (int **)calloc(LIN, sizeof(int *));
+    matriz = (int **)calloc(LINHA, sizeof(int *));
 
-    for (int j = 0; j <= COL; j++) {
+    for (int j = 0; j <= COLUNA; j++) {
         matriz[j] = (int *)calloc(1, sizeof(int));
     }
 
-    for (int i = 0; i < LIN; i++) {
-        for (int j = 0; j <= COL; j++) {
+    for (int i = 0; i < LINHA; i++) {
+        for (int j = 0; j <= COLUNA; j++) {
             matriz[i][j] = vetor1[j];
         }
     }
 
-    FILE *file;
-    file = fopen(resultadoMatriz, "w");
-    for (int i = 0; i < LIN; i++) {
-        for (int j = 0; j < COL; j++) {
-            fprintf(file, "%d\n", matriz[i][j]);
+    FILE *ponteiroArquivo;
+    ponteiroArquivo = fopen(resultadoMatriz, "w");
+    for (int i = 0; i < LINHA; i++) {
+        for (int j = 0; j < COLUNA; j++) {
+            fprintf(ponteiroArquivo, "%d\n", matriz[i][j]);
         }
     }
-    fclose(file);
+    fclose(ponteiroArquivo);
 
-    file = fopen(resultadoMatriz, "r");
+    ponteiroArquivo = fopen(resultadoMatriz, "r");
     int numeroLido, index = 0;
     printf("Resultado matriz:\n");
-    while (!feof(file)) {
-        fscanf(file, "%d\n", &numeroLido);
+    while (!feof(ponteiroArquivo)) {
+        fscanf(ponteiroArquivo, "%d\n", &numeroLido);
         printf("Numero lido [%d]: %d\nFatorial: %d\n\n", index, numeroLido, fatorial(numeroLido));
         index++;
     }
-    fclose(file);
+    fclose(ponteiroArquivo);
 
-    file = fopen(ResultadoVetor, "wb");
-    fwrite(vetor1, sizeof(int), MAX, file);
-    fclose(file);
+    ponteiroArquivo = fopen(ResultadoVetor, "wb");
+    fwrite(vetor1, sizeof(int), MAX, ponteiroArquivo);
+    fclose(ponteiroArquivo);
 
-    file = fopen(ResultadoVetor, "rb");
+    ponteiroArquivo = fopen(ResultadoVetor, "rb");
     int dado, i = 0;
 
-    file = fopen(ResultadoVetor2, "wb");
-    fwrite(vetor2, sizeof(int), MAX, file);
-    fclose(file);
-    file = fopen(ResultadoVetor2, "rb");
+    ponteiroArquivo = fopen(ResultadoVetor2, "wb");
+    fwrite(vetor2, sizeof(int), MAX, ponteiroArquivo);
+    fclose(ponteiroArquivo);
+    ponteiroArquivo = fopen(ResultadoVetor2, "rb");
     i = 0;
     printf("\n");
-    fread(vetorResultado, sizeof(int), MAX, file);
-    fclose(file);
+    fread(vetorResultado, sizeof(int), MAX, ponteiroArquivo);
+    fclose(ponteiroArquivo);
 
-    file = fopen(ResultadoVetor3, "wb");
-    fwrite(vetor1, sizeof(int), MAX, file);
-    fwrite(vetor2, sizeof(int), MAX, file);
-    fclose(file);
+    ponteiroArquivo = fopen(ResultadoVetor3, "wb");
+    fwrite(vetor1, sizeof(int), MAX, ponteiroArquivo);
+    fwrite(vetor2, sizeof(int), MAX, ponteiroArquivo);
+    fclose(ponteiroArquivo);
 
-    file = fopen(ResultadoVetor3, "rb");
-    fread(vetorResultado, sizeof(int), MAX, file);
+    ponteiroArquivo = fopen(ResultadoVetor3, "rb");
+    fread(vetorResultado, sizeof(int), MAX, ponteiroArquivo);
     printf("Vetor 1\n");
     printArrayFactorial(vetorResultado, MAX);
 
-    fread(vetorResultado, sizeof(int), MAX, file);
+    fread(vetorResultado, sizeof(int), MAX, ponteiroArquivo);
     printf("Vetor 2\n");
     printArrayFactorial(vetorResultado, MAX);
     return 0;
